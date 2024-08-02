@@ -1,9 +1,12 @@
 import React from 'react'
+import { Button } from './components/ui/button'
 
 function App() {
   return (
 	<div>
-	  <p></p>
+	  <Button>
+      +
+    </Button>
 	</div>
   )
 }
