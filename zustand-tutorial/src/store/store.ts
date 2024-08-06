@@ -3,9 +3,13 @@ import { create } from "zustand";
 import { createUserSlice } from "./user-slice";
 import { immer } from "zustand/middleware/immer";
 import { createCartSlice } from "./cart-slice";
+import { devtools } from "zustand/middleware";
 
-export const useStore = create<Store>()(immer(((...a)=>({
-    ...createUserSlice(...a),
-    ...createCartSlice(...a)
-})))
+export const useStore = create<Store>()(
+    devtools(
+        immer(((...a)=>({
+        ...createUserSlice(...a),
+        ...createCartSlice(...a)
+    })))
+)
 );
