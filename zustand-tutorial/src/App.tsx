@@ -9,6 +9,7 @@ import { PRODUCTS_DATA } from './lib/mockData';
 import { useStore } from './store/store';
 import { Button } from './components/ui/button';
 import { ChangeQtyButtons } from './components/change-qty-buttons';
+import { Cart } from './components/cart';
 
 function App() {
   const addProduct = useStore((state) => state.addProduct);
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <main className='space-y-2 dark h-screen bg-background max-w-sm mx-auto mt-2'>
+      <Cart/>
       <h1 className='text-2xl'>Products:</h1>
       <div className='space-y-2'>
         {PRODUCTS_DATA.map((product) => (
